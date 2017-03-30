@@ -1,0 +1,48 @@
+/* CSS Document */
+body {
+	margin: 0;
+	padding: 0;
+	background-color:#FFFFFF;
+	color:#332B2B;
+	font-family: Trebuchet, Arial, sans-serif;
+	font-size:10pt;
+	line-height:13pt;
+}
+a, a:visited {
+	color:#238BD8;
+	text-decoration: underline;
+}
+a:hover {
+	color:#F18A26;
+	text-decoration:underline;
+}
+#content {
+	width: 665px;
+	margin: 0 auto;
+}
+#header {
+	text-align:center;
+}	
+#header h1 {
+	font-size:14pt;
+	line-height:20pt;
+	color:#7A7370;
+}
+#main_image {
+	margin: 0 10px;
+}
+#main_image img {
+	width: 100%;
+	border: 0;
+}
+#lucie_link {
+	margin-left: 65px;
+}
+@media all and (max-width: 645px) {
+	body {
+		width: 100%;
+	}
+	#content {
+		width: 100%;
+	}
+}
