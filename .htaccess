@@ -1,0 +1,38 @@
+<IfModule mod_rewrite.c>
+	# Redirect all HTTP requests to HTTPS
+	RewriteCond %{HTTPS} !=on
+	RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R=301,L]
+</IfModule>
+
+order deny,allow
+<Files *.inc>
+Deny From All
+</Files>
+<Files *.class>
+Deny From All
+</Files>
+<Files *.tpl>
+Deny From All
+</Files>
+<Files MANIFEST>
+Deny From All
+</Files>
+Options -Indexes
+
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript application/json
+    AddOutputFilterByType DEFLATE image/x-icon image/svg+xml application/vnd.ms-fontobject application/x-font-ttf font/opentype
+</IfModule>
+
+AddType text/cache-manifest .appcache
+AddType image/x-icon .ico
+
+<IfModule mod_expires.c>
+    Header set cache-control: public
+    # Enable expirations
+    ExpiresActive On
+    # Disable caching of app cache manifest
+    ExpiresByType text/cache-manifest "access plus 0 seconds"
+	# Cache favicon
+	ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
