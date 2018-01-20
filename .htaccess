@@ -31,6 +31,8 @@ AddType image/x-icon .ico
     Header set cache-control: public
     # Enable expirations
     ExpiresActive On
+    # Disable caching of HTML files
+    ExpiresByType text/html "access plus 0 seconds"
     # Disable caching of app cache manifest
     ExpiresByType text/cache-manifest "access plus 0 seconds"
 	# Cache favicon
